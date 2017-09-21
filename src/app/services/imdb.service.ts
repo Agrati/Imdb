@@ -4,8 +4,8 @@ import 'rxjs/Rx';
 
 @Injectable()
 export class ImdbService {
-  baseUrl: String;
-  apikey: String;
+  private baseUrl: String;
+  private apikey: String;
 
   constructor(private http: Http) {
     this.baseUrl = 'https://api.themoviedb.org/3/';

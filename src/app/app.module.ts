@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ImdbComponent } from './imdb/imdb.component';
 import { GithubComponent } from './github/github.component';
 import { ImdbService } from './services/imdb.service';
+import { GithubService } from './services/github.service';
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import { ImdbService } from './services/imdb.service';
     AppRoutingModule,
     HttpModule
   ],
-  providers: [ImdbService],
+  providers: [ImdbService, GithubService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

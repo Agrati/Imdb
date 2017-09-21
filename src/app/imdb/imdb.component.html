@@ -1,8 +1,8 @@
-<label for="search">Search bt Title</label>
-<input type="text" placeholder="Search..." name="search" (keyup)="searchMoviesByTitle()" [(ngModel)]="searchByTitleInput"> {{searchByTitleInput}}
+<label for="search">Search by Title</label>
+<input type="text" placeholder="Search..." name="search" (keyup)="searchMoviesByTitle()" [(ngModel)]="searchByTitleInput">
 
 <ul class="list-group">
-  <li class="list-group-item">First item</li>
-  <li class="list-group-item">Second item</li>
-  <li class="list-group-item">Third item</li>
+  <li class="list-group-item" style="cursor: pointer" *ngFor="let movie of listOfMovies" (click)="openMovieOnline(movie)">{{movie.title}} ({{movie.release_date | date:'y'}})
+    <img src="{{getPoster(movie.poster_path)}}" width="75px" height="112.5px;">
+  </li>
 </ul>
