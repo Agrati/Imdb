@@ -1,3 +1,23 @@
 <label for="username"></label>
 <input type="text" name="username" placeholder="Search username..." [(ngModel)]="username">
 <button class="btn btn-primary" (click)="searchUsers()">Search</button>
+
+<div style="margin-top: 10px;">
+  <label for="username">Username</label>
+  <span *ngIf="searchClick">{{ githubUser.login }}</span>
+  <br>
+  <label for="url">URL: </label>
+  <span *ngIf="searchClick">{{ githubUser.url }}</span>
+  <br>
+  <label for="createdDate">Created at: </label>
+  <span *ngIf="searchClick">{{ githubUser.created_at }}</span>
+  <br>
+  <label for="folowers">Folowers:</label>
+  <span *ngIf="searchClick">{{ githubUser.followers }}</span>
+  <br>
+  <label for="projects">Projects:</label>
+  <span *ngIf="searchClick">{{ githubProjects.length }}</span>
+  <ng-container *ngIf="searchClick">
+    <p *ngFor="let proj of githubProjects" style="padding-left: 10px;"><b>Name: </b>{{ proj.name }} / <b>Forks: </b>{{ proj.forks }}</p>
+  </ng-container>
+</div>
